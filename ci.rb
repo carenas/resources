@@ -28,12 +28,6 @@ class Qemu
       qemu_target_dir = File.join(architecture_directory, "bin")
 
       FileUtils.mkdir_p qemu_target_dir
-
-      if File.exist?("qemu/pc-bios/edk2-aarch64-code.fd.bz2")
-        FileUtils.rm_f "qemu/pc-bios/edk2-aarch64-code.fd"
-        execute "bzip2", "-d", "qemu/pc-bios/edk2-aarch64-code.fd.bz2"
-      end
-
       FileUtils.mkdir_p firmware_target_dirctory
       bundle_uefi
       FileUtils.cp File.join("qemu", "build", qemu_name), File.join(qemu_target_dir, "qemu")
@@ -95,7 +89,6 @@ class Qemu
       qemu: %w[
         pc-bios/efi-e1000.rom
         pc-bios/efi-virtio.rom
-        pc-bios/edk2-aarch64-code.fd
       ],
 
       external: {

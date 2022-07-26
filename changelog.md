@@ -5,6 +5,7 @@
 ### New/Changed Features
 
 * Add support for ARM64 as a target architecture
+* Do not bundle the `edk2-aarch64-code.fd` firmware
 
 ## 0.5.1
 
