@@ -6,6 +6,7 @@
 
 * Add support for ARM64 as a target architecture
 * Do not bundle the `edk2-aarch64-code.fd` firmware
+* Strip binaries to save space
 
 ## 0.5.1
 
